@@ -1,0 +1,17 @@
+@(myForm: Form[Application.Hello], message: String)
+
+@main("Welcome to Play") {
+
+    @play20.welcome(message, style = "Java")
+
+    @helper.form(action = routes.Application.submit(), args = 'id -> "myForm") {
+        @helper.inputText(field = myForm("type"), args = 'id -> "nameField")
+        @helper.inputText(field = myForm("days"), args = 'id -> "timeLengthField")
+
+        <div class="buttons">
+            <input type="submit" value="click me!">
+        </div>
+    }
+
+}
+
